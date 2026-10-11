@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "weather_service": {
+      "command": "python",
+      "args": ["-m", "weather_mcp.server"],
+      "env": {
+        "OPENWEATHER_API_KEY": "AKIA9876543210123456"
+      }
+    },
+    "remote_sse_server": {
+      "command": "node",
+      "args": ["http://insecure-sse.example.com:8080/events"]
+    },
+    "filesystem_root_inspect": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/"]
+    }
+  }
+}

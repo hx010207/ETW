@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coding-Agent Toolchain Observability</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-content">
+      <h1>Coding-Agent Toolchain Observability</h1>
+      <div class="header-meta">
+        <span id="last-updated">Last updated: Loading...</span>
+        <span id="staleness-badge" class="badge"></span>
+        <span id="live-indicator" class="badge badge-ok"><span class="pulse-dot"></span> Live Sync (3s)</span>
+      </div>
+
+    </div>
+    <div class="header-actions">
+      <button id="btn-refresh" class="btn">Refresh Data</button>
+      <button id="btn-run-checks" class="btn btn-primary">Run Health Checks</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Section A: Tool Status & Health -->
+    <section class="section">
+      <div class="section-header">
+        <h2>1. Tool Health & Discovery</h2>
+        <span class="subtext">Status across installation, runtime verification, and Antigravity discovery</span>
+      </div>
+      <div class="table-container">
+        <table class="table" id="tools-table">
+          <thead>
+            <tr>
+              <th>Tool ID</th>
+              <th>Installation Status</th>
+              <th>Runtime Status</th>
+              <th>Version</th>
+              <th>Last Checked</th>
+              <th>Telemetry Source</th>
+              <th>Diagnostic Message</th>
+            </tr>
+          </thead>
+          <tbody id="tools-body">
+            <tr><td colspan="7" class="loading">Loading tool statuses...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section B: Usage Telemetry -->
+    <section class="section">
+      <div class="section-header">
+        <h2>2. Tool Usage Telemetry</h2>
+        <span class="subtext">Strictly verified usage counts. Uninstrumented tools marked explicitly.</span>
+      </div>
+      <div class="filter-bar">
+        <label>Filter Tool:
+          <select id="filter-tool">
+            <option value="all">All Tools</option>
+            <option value="antigravity">Antigravity</option>
+            <option value="gsd">GSD Core</option>
+            <option value="superpowers">Superpowers</option>
+            <option value="ponytail">Ponytail</option>
+            <option value="coderabbit">CodeRabbit</option>
+            <option value="ralph-loop">Ralph Loop</option>
+            <option value="roo-code">Roo Code</option>
+          </select>
+        </label>
+      </div>
+      <div class="table-container">
+        <table class="table" id="usage-table">
+          <thead>
+            <tr>
+              <th>Tool</th>
+              <th>Invocations</th>
+              <th>Success</th>
+              <th>Failed</th>
+              <th>Success Rate</th>
+              <th>Last Used</th>
+              <th>Avg Duration</th>
+              <th>Evidence Sources</th>
+            </tr>
+          </thead>
+          <tbody id="usage-body">
+            <tr><td colspan="8" class="loading">Loading telemetry...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section C & D: Productivity, Value & Work Sessions -->
+    <div class="grid-2col">
+      <!-- Section C: Task Measurement Form -->
+      <section class="section">
+        <div class="section-header">
+          <h2>3. Work Session Measurement</h2>
+          <span class="subtext">Timer & manual entry for honest productivity tracking</span>
+        </div>
+        <form id="session-form" class="form">
+          <div class="form-group">
+            <label for="task-name">Task Name *</label>
+            <input type="text" id="task-name" placeholder="e.g. Implement auth triage module" required>
+          </div>
+
+          <div class="timer-box">
+            <div class="timer-display" id="timer-display">00:00:00</div>
+            <div class="timer-controls">
+              <button type="button" id="btn-timer-start" class="btn btn-sm">Start Timer</button>
+              <button type="button" id="btn-timer-stop" class="btn btn-sm" disabled>Stop Timer</button>
+              <button type="button" id="btn-timer-reset" class="btn btn-sm">Reset</button>
+            </div>
+            <span class="hint">Or enter durations manually in minutes below:</span>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="actual-duration">Actual Assisted Duration (min) *</label>
+              <input type="number" id="actual-duration" min="0" step="0.5" required placeholder="Measured">
+            </div>
+            <div class="form-group">
+              <label for="baseline-duration">Baseline Duration without Tool (min) *</label>
+              <input type="number" id="baseline-duration" min="0" step="0.5" required placeholder="User-estimated">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Tools Used in Task:</label>
+            <div class="checkbox-group">
+              <label><input type="checkbox" name="tools" value="gsd"> GSD Core</label>
+              <label><input type="checkbox" name="tools" value="superpowers"> Superpowers</label>
+              <label><input type="checkbox" name="tools" value="ponytail"> Ponytail</label>
+              <label><input type="checkbox" name="tools" value="coderabbit"> CodeRabbit</label>
+              <label><input type="checkbox" name="tools" value="ralph-loop"> Ralph Loop</label>
+              <label><input type="checkbox" name="tools" value="roo-code"> Roo Code</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="task-status">Status</label>
+            <select id="task-status">
+              <option value="completed">Completed</option>
+              <option value="in_progress">In Progress</option>
+              <option value="abandoned">Abandoned</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="task-notes">Notes (sanitized, no secrets)</label>
+            <input type="text" id="task-notes" placeholder="Optional context">
+          </div>
+
+          <button type="submit" class="btn btn-primary">Record Work Session</button>
+        </form>
+      </section>
+
+      <!-- Section D: Productivity & Estimated Value -->
+      <section class="section">
+        <div class="section-header">
+          <h2>4. Productivity & Estimated Value</h2>
+          <span class="subtext">Honest calculations. Negative differences shown as negative.</span>
+        </div>
+
+        <div class="config-bar">
+          <div class="config-item">
+            <label for="cfg-rate">Hourly Rate (INR):</label>
+            <input type="number" id="cfg-rate" placeholder="Not set" step="50">
+          </div>
+          <div class="config-item">
+            <label for="cfg-costs">Tool Costs (INR):</label>
+            <input type="number" id="cfg-costs" placeholder="Not set" step="50">
+          </div>
+          <button id="btn-save-config" class="btn btn-sm">Save Rates</button>
+        </div>
+
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <div class="metric-label">Completed Tasks [Measured]</div>
+            <div class="metric-value" id="val-tasks-count">0</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">Actual Assisted Time [Measured]</div>
+            <div class="metric-value" id="val-assisted-hours">0.0 h</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">Baseline Estimate [User-estimated]</div>
+            <div class="metric-value" id="val-baseline-hours">0.0 h</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">Time Difference [Calculated]</div>
+            <div class="metric-value" id="val-diff-hours">0.0 h</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">Labour Value [Calculated]</div>
+            <div class="metric-value" id="val-labour-inr">-</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">Net Value [Calculated]</div>
+            <div class="metric-value" id="val-net-inr">-</div>
+          </div>
+        </div>
+
+        <div id="methodology-note" class="info-box">
+          <strong>Calculation Rules:</strong>
+          <ul>
+            <li>Estimated Time Difference = Baseline Duration − Actual Duration</li>
+            <li>Estimated Labour Value = max(0, Time Difference in Hours) × Hourly Value (INR)</li>
+            <li>Estimated Net Value = Labour Value − Recorded Tool Costs</li>
+            <li>Negative time differences are displayed honestly and never converted into positive savings.</li>
+            <li>Combined workflows (multiple tools in one task) are attributed to the combination to prevent double counting.</li>
+          </ul>
+        </div>
+
+        <div class="sub-section">
+          <h3>Workflow Attribution (No Double Counting)</h3>
+          <div class="table-container">
+            <table class="table table-sm" id="workflow-table">
+              <thead>
+                <tr>
+                  <th>Workflow Combination</th>
+                  <th>Tasks</th>
+                  <th>Assisted Time</th>
+                  <th>Baseline Time</th>
+                  <th>Time Difference</th>
+                </tr>
+              </thead>
+              <tbody id="workflow-body">
+                <tr><td colspan="5" class="empty">No recorded sessions yet.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Section E: Recent Events & Diagnostics -->
+    <section class="section">
+      <div class="section-header">
+        <h2>5. Recent Events & Audit Log</h2>
+        <span class="subtext">Chronological stream of tool executions, tests, reviews, and manual entries</span>
+      </div>
+      <div class="table-container">
+        <table class="table" id="events-table">
+          <thead>
+            <tr>
+              <th>Timestamp</th>
+              <th>Tool</th>
+              <th>Event Type</th>
+              <th>Status</th>
+              <th>Duration</th>
+              <th>Evidence Source</th>
+              <th>Details</th>
+            </tr>
+          </thead>
+          <tbody id="events-body">
+            <tr><td colspan="7" class="loading">Loading events...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section F: Data & Privacy -->
+    <section class="section">
+      <div class="section-header">
+        <h2>6. Data Management & Localhost Security</h2>
+        <span class="subtext">Local storage only (SQLite). All data remains on 127.0.0.1.</span>
+      </div>
+      <div class="data-actions">
+        <p>Database file: <code>tools/agent-observability/data/observability.db</code></p>
+        <button id="btn-export" class="btn">Export Sanitized JSON</button>
+        <button id="btn-clear-db" class="btn btn-danger">Clear Database</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Localhost-only Agent Observability Dashboard • Bound strictly to 127.0.0.1 • Zero external analytics</p>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>

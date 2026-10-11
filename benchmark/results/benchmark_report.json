@@ -1,0 +1,110 @@
+{
+  "timestamp": "2026-10-11T12:24:50.982392+00:00",
+  "fixtures_dir": "datasets/fixtures-v1",
+  "counts": {
+    "total_raw_records": 68,
+    "total_valid_observations": 62,
+    "total_quarantined_malformed": 6,
+    "total_correlated_cases": 57
+  },
+  "baseline_vs_etw": {
+    "baseline_review_units": 62,
+    "etw_review_units": 57,
+    "duplicate_reduction_pct": 8.06,
+    "erroneous_cross_repo_merges": 0,
+    "placeholder_test_noise_cases": 22,
+    "p4_noise_cases": 22
+  },
+  "classification_metrics": {
+    "total_evaluated": 62,
+    "confusion_matrix": {
+      "candidate_secret": {
+        "candidate_secret": 29,
+        "likely_placeholder": 0,
+        "likely_test_value": 0,
+        "likely_canary": 0,
+        "needs_review": 0
+      },
+      "likely_placeholder": {
+        "candidate_secret": 0,
+        "likely_placeholder": 12,
+        "likely_test_value": 0,
+        "likely_canary": 0,
+        "needs_review": 0
+      },
+      "likely_test_value": {
+        "candidate_secret": 0,
+        "likely_placeholder": 0,
+        "likely_test_value": 10,
+        "likely_canary": 0,
+        "needs_review": 0
+      },
+      "likely_canary": {
+        "candidate_secret": 0,
+        "likely_placeholder": 0,
+        "likely_test_value": 0,
+        "likely_canary": 5,
+        "needs_review": 0
+      },
+      "needs_review": {
+        "candidate_secret": 0,
+        "likely_placeholder": 0,
+        "likely_test_value": 0,
+        "likely_canary": 0,
+        "needs_review": 6
+      }
+    },
+    "per_class_metrics": {
+      "candidate_secret": {
+        "true_positives": 29,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 100.0,
+        "recall": 100.0
+      },
+      "likely_placeholder": {
+        "true_positives": 12,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 100.0,
+        "recall": 100.0
+      },
+      "likely_test_value": {
+        "true_positives": 10,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 100.0,
+        "recall": 100.0
+      },
+      "likely_canary": {
+        "true_positives": 5,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 100.0,
+        "recall": 100.0
+      },
+      "needs_review": {
+        "true_positives": 6,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 100.0,
+        "recall": 100.0
+      }
+    },
+    "false_dismissals": 0,
+    "false_dismissal_rate_percent": 0.0,
+    "methodology_disclaimer": "NOTICE: Metrics are calculated strictly on synthetic, labelled benchmark fixtures. These results do not establish real-world production accuracy or prevalence."
+  },
+  "gate_1_evaluation": {
+    "gate": "Gate 1 - Credential Triage Evaluation Gate",
+    "status": "PASS",
+    "criteria": {
+      "zero_secret_leakage": "PASS",
+      "zero_false_dismissals": "PASS",
+      "false_dismissal_rate": "0.0%",
+      "noise_reduction": "38.6%",
+      "duplicate_consolidation": "8.1% reduction, 0 erroneous merges",
+      "reproducibility": "PASS (deterministic rule engine)"
+    }
+  }
+}

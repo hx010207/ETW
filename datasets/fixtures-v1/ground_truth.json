@@ -1,0 +1,546 @@
+[
+  {
+    "id": "FIX-01",
+    "scanner": "trufflehog",
+    "category": "true_candidate_secret",
+    "expected_classification": "candidate_secret",
+    "expected_priority": "P1_urgent",
+    "asset_scope": "org/prod-payments"
+  },
+  {
+    "id": "FIX-02",
+    "scanner": "trufflehog",
+    "category": "true_candidate_secret",
+    "expected_classification": "candidate_secret",
+    "expected_priority": "P1_urgent",
+    "asset_scope": "org/prod-cloud"
+  },
+  {
+    "id": "FIX-03",
+    "scanner": "trufflehog",
+    "category": "true_candidate_secret",
+    "expected_classification": "candidate_secret",
+    "expected_priority": "P2_high",
+    "asset_scope": "org/auth-service"
+  },
+  {
+    "id": "FIX-04",
+    "scanner": "trufflehog",
+    "category": "true_candidate_secret",
+    "expected_classification": "candidate_secret",
+    "expected_priority": "P2_high",
+    "asset_scope": "org/backend-core"
+  },
+  {
+    "id": "FIX-05",
+    "scanner": "trufflehog",
+    "category": "true_candidate_secret",
+    "expected_classification": "candidate_secret",
+    "expected_priority": "P2_high",
+    "asset_scope": "org/database-migrator"
+  },
+  {
+    "id": "FIX-06",
+    "scanner": "trufflehog",
+    "category": "true_candidate_secret",
+    "expected_classification": "candidate_secret",
+    "expected_priority": "P2_high",
+    "asset_scope": "org/notifications"
+  },
+  {
+    "id": "FIX-07",
+    "scanner": "trufflehog",
+    "category": "true_candidate_secret",
+    "expected_classification": "candidate_secret",
+    "expected_priority": "P2_high",
+    "asset_scope": "org/comms"
+  },
+  {
+    "id": "FIX-08",
+    "scanner": "trufflehog",
+    "category": "true_candidate_secret",
+    "expected_classification": "candidate_secret",
+    "expected_priority": "P2_high",
+    "asset_scope": "org/ai-engine"
+  },
+  {
+    "id": "FIX-16",
+    "scanner": "trufflehog",
+    "category": "documentation_placeholder",
+    "expected_classification": "likely_placeholder",
+    "expected_priority": "P4_low",
+    "asset_scope": "org/sdk-python"
+  },
+  {
+    "id": "FIX-17",
+    "scanner": "trufflehog",
+    "category": "documentation_placeholder",
+    "expected_classification": "likely_placeholder",
+    "expected_priority": "P4_low",
+    "asset_scope": "org/docs"
+  },
+  {
+    "id": "FIX-18",
+    "scanner": "trufflehog",
+    "category": "documentation_placeholder",
+    "expected_classification": "likely_placeholder",
+    "expected_priority": "P4_low",
+    "asset_scope": "org/api-reference"
+  },
+  {
+    "id": "FIX-19",
+    "scanner": "trufflehog",
+    "category": "documentation_placeholder",
+    "expected_classification": "likely_placeholder",
+    "expected_priority": "P4_low",
+    "asset_scope": "org/cli-tool"
+  },
+  {
+    "id": "FIX-20",
+    "scanner": "trufflehog",
+    "category": "documentation_placeholder",
+    "expected_classification": "likely_placeholder",
+    "expected_priority": "P4_low",
+    "asset_scope": "org/sample-app"
+  },
+  {
+    "id": "FIX-21",
+    "scanner": "trufflehog",
+    "category": "documentation_placeholder",
+    "expected_classification": "likely_placeholder",
+    "expected_priority": "P4_low",
+    "asset_scope": "org/web-starter"
+  },
+  {
+    "id": "FIX-28",
+    "scanner": "trufflehog",
+    "category": "unit_test_fixture",
+    "expected_classification": "likely_test_value",
+    "expected_priority": "P4_low",
+    "asset_scope": "org/core-api"
+  },
+  {
+    "id": "FIX-29",
+    "scanner": "trufflehog",
+    "category": "unit_test_fixture",
+    "expected_classification": "likely_test_value",
+    "expected_priority": "P4_low",
+    "asset_scope": "org/billing"
+  },
+  {
+    "id": "FIX-30",
+    "scanner": "trufflehog",
+    "category": "unit_test_fixture",
+    "expected_classification": "likely_test_value",
+    "expected_priority": "P4_low",
+    "asset_scope": "org/storage"
+  },
+  {
+    "id": "FIX-31",
+    "scanner": "trufflehog",
+    "category": "unit_test_fixture",
+    "expected_classification": "likely_test_value",
+    "expected_priority": "P4_low",
+    "asset_scope": "org/gateway"
+  },
+  {
+    "id": "FIX-32",
+    "scanner": "trufflehog",
+    "category": "unit_test_fixture",
+    "expected_classification": "likely_test_value",
+    "expected_priority": "P4_low",
+    "asset_scope": "org/client-lib"
+  },
+  {
+    "id": "FIX-38",
+    "scanner": "trufflehog",
+    "category": "canary_token",
+    "expected_classification": "likely_canary",
+    "expected_priority": "P1_urgent",
+    "asset_scope": "org/honey-pot"
+  },
+  {
+    "id": "FIX-39",
+    "scanner": "trufflehog",
+    "category": "canary_token",
+    "expected_classification": "likely_canary",
+    "expected_priority": "P1_urgent",
+    "asset_scope": "org/trap-infra"
+  },
+  {
+    "id": "FIX-43",
+    "scanner": "trufflehog",
+    "category": "duplicate_sighting",
+    "expected_classification": "candidate_secret",
+    "expected_priority": "P2_high",
+    "asset_scope": "org/monorepo"
+  },
+  {
+    "id": "FIX-44",
+    "scanner": "trufflehog",
+    "category": "duplicate_sighting",
+    "expected_classification": "candidate_secret",
+    "expected_priority": "P2_high",
+    "asset_scope": "org/monorepo"
+  },
+  {
+    "id": "FIX-45",
+    "scanner": "trufflehog",
+    "category": "duplicate_sighting",
+    "expected_classification": "candidate_secret",
+    "expected_priority": "P1_urgent",
+    "asset_scope": "org/monorepo"
+  },
+  {
+    "id": "FIX-46",
+    "scanner": "trufflehog",
+    "category": "duplicate_sighting",
+    "expected_classification": "candidate_secret",
+    "expected_priority": "P1_urgent",
+    "asset_scope": "org/monorepo"
+  },
+  {
+    "id": "FIX-47",
+    "scanner": "trufflehog",
+    "category": "duplicate_sighting",
+    "expected_classification": "candidate_secret",
+    "expected_priority": "P2_high",
+    "asset_scope": "org/monorepo"
+  },
+  {
+    "id": "FIX-53",
+    "scanner": "trufflehog",
+    "category": "cross_repo_collision",
+    "expected_classification": "candidate_secret",
+    "expected_priority": "P2_high",
+    "asset_scope": "customer-a/web-app"
+  },
+  {
+    "id": "FIX-54",
+    "scanner": "trufflehog",
+    "category": "cross_repo_collision",
+    "expected_classification": "candidate_secret",
+    "expected_priority": "P2_high",
+    "asset_scope": "customer-b/internal-tools"
+  },
+  {
+    "id": "FIX-57",
+    "scanner": "trufflehog",
+    "category": "ambiguous_context",
+    "expected_classification": "needs_review",
+    "expected_priority": "P3_normal",
+    "asset_scope": "org/legacy"
+  },
+  {
+    "id": "FIX-58",
+    "scanner": "trufflehog",
+    "category": "ambiguous_context",
+    "expected_classification": "needs_review",
+    "expected_priority": "P3_normal",
+    "asset_scope": "org/scripts"
+  },
+  {
+    "id": "FIX-59",
+    "scanner": "trufflehog",
+    "category": "ambiguous_context",
+    "expected_classification": "needs_review",
+    "expected_priority": "P3_normal",
+    "asset_scope": "org/crypto-lab"
+  },
+  {
+    "id": "FIX-63",
+    "scanner": "trufflehog",
+    "category": "malformed_edge_case",
+    "expected_classification": "quarantined",
+    "expected_priority": "N/A",
+    "asset_scope": "org/quarantine"
+  },
+  {
+    "id": "FIX-64",
+    "scanner": "trufflehog",
+    "category": "malformed_edge_case",
+    "expected_classification": "quarantined",
+    "expected_priority": "N/A",
+    "asset_scope": "org/quarantine"
+  },
+  {
+    "id": "FIX-65",
+    "scanner": "trufflehog",
+    "category": "malformed_edge_case",
+    "expected_classification": "quarantined",
+    "expected_priority": "N/A",
+    "asset_scope": "org/quarantine"
+  },
+  {
+    "id": "FIX-09",
+    "scanner": "gitleaks",
+    "category": "true_candidate_secret",
+    "expected_classification": "candidate_secret",
+    "expected_priority": "P2_high",
+    "asset_scope": "org/analytics"
+  },
+  {
+    "id": "FIX-10",
+    "scanner": "gitleaks",
+    "category": "true_candidate_secret",
+    "expected_classification": "candidate_secret",
+    "expected_priority": "P2_high",
+    "asset_scope": "org/search-infra"
+  },
+  {
+    "id": "FIX-11",
+    "scanner": "gitleaks",
+    "category": "true_candidate_secret",
+    "expected_classification": "candidate_secret",
+    "expected_priority": "P2_high",
+    "asset_scope": "org/customer-portal"
+  },
+  {
+    "id": "FIX-12",
+    "scanner": "gitleaks",
+    "category": "true_candidate_secret",
+    "expected_classification": "candidate_secret",
+    "expected_priority": "P2_high",
+    "asset_scope": "org/billing-service"
+  },
+  {
+    "id": "FIX-13",
+    "scanner": "gitleaks",
+    "category": "true_candidate_secret",
+    "expected_classification": "candidate_secret",
+    "expected_priority": "P2_high",
+    "asset_scope": "org/infra-ops"
+  },
+  {
+    "id": "FIX-14",
+    "scanner": "gitleaks",
+    "category": "true_candidate_secret",
+    "expected_classification": "candidate_secret",
+    "expected_priority": "P2_high",
+    "asset_scope": "org/gateway"
+  },
+  {
+    "id": "FIX-15",
+    "scanner": "gitleaks",
+    "category": "true_candidate_secret",
+    "expected_classification": "candidate_secret",
+    "expected_priority": "P2_high",
+    "asset_scope": "org/reporting"
+  },
+  {
+    "id": "FIX-22",
+    "scanner": "gitleaks",
+    "category": "documentation_placeholder",
+    "expected_classification": "likely_placeholder",
+    "expected_priority": "P4_low",
+    "asset_scope": "org/frontend"
+  },
+  {
+    "id": "FIX-23",
+    "scanner": "gitleaks",
+    "category": "documentation_placeholder",
+    "expected_classification": "likely_placeholder",
+    "expected_priority": "P4_low",
+    "asset_scope": "org/examples"
+  },
+  {
+    "id": "FIX-24",
+    "scanner": "gitleaks",
+    "category": "documentation_placeholder",
+    "expected_classification": "likely_placeholder",
+    "expected_priority": "P4_low",
+    "asset_scope": "org/integrations"
+  },
+  {
+    "id": "FIX-25",
+    "scanner": "gitleaks",
+    "category": "documentation_placeholder",
+    "expected_classification": "likely_placeholder",
+    "expected_priority": "P4_low",
+    "asset_scope": "org/docker-templates"
+  },
+  {
+    "id": "FIX-26",
+    "scanner": "gitleaks",
+    "category": "documentation_placeholder",
+    "expected_classification": "likely_placeholder",
+    "expected_priority": "P4_low",
+    "asset_scope": "org/mobile-sdk"
+  },
+  {
+    "id": "FIX-27",
+    "scanner": "gitleaks",
+    "category": "documentation_placeholder",
+    "expected_classification": "likely_placeholder",
+    "expected_priority": "P4_low",
+    "asset_scope": "org/templates"
+  },
+  {
+    "id": "FIX-33",
+    "scanner": "gitleaks",
+    "category": "unit_test_fixture",
+    "expected_classification": "likely_test_value",
+    "expected_priority": "P4_low",
+    "asset_scope": "org/auth"
+  },
+  {
+    "id": "FIX-34",
+    "scanner": "gitleaks",
+    "category": "unit_test_fixture",
+    "expected_classification": "likely_test_value",
+    "expected_priority": "P4_low",
+    "asset_scope": "org/database"
+  },
+  {
+    "id": "FIX-35",
+    "scanner": "gitleaks",
+    "category": "unit_test_fixture",
+    "expected_classification": "likely_test_value",
+    "expected_priority": "P4_low",
+    "asset_scope": "org/messaging"
+  },
+  {
+    "id": "FIX-36",
+    "scanner": "gitleaks",
+    "category": "unit_test_fixture",
+    "expected_classification": "likely_test_value",
+    "expected_priority": "P4_low",
+    "asset_scope": "org/web-service"
+  },
+  {
+    "id": "FIX-37",
+    "scanner": "gitleaks",
+    "category": "unit_test_fixture",
+    "expected_classification": "likely_test_value",
+    "expected_priority": "P4_low",
+    "asset_scope": "org/mobile"
+  },
+  {
+    "id": "FIX-40",
+    "scanner": "gitleaks",
+    "category": "canary_token",
+    "expected_classification": "likely_canary",
+    "expected_priority": "P1_urgent",
+    "asset_scope": "org/security-defense"
+  },
+  {
+    "id": "FIX-41",
+    "scanner": "gitleaks",
+    "category": "canary_token",
+    "expected_classification": "likely_canary",
+    "expected_priority": "P1_urgent",
+    "asset_scope": "org/defense"
+  },
+  {
+    "id": "FIX-42",
+    "scanner": "gitleaks",
+    "category": "canary_token",
+    "expected_classification": "likely_canary",
+    "expected_priority": "P1_urgent",
+    "asset_scope": "org/honeynet"
+  },
+  {
+    "id": "FIX-48",
+    "scanner": "gitleaks",
+    "category": "duplicate_sighting",
+    "expected_classification": "candidate_secret",
+    "expected_priority": "P2_high",
+    "asset_scope": "org/monorepo"
+  },
+  {
+    "id": "FIX-49",
+    "scanner": "gitleaks",
+    "category": "duplicate_sighting",
+    "expected_classification": "candidate_secret",
+    "expected_priority": "P2_high",
+    "asset_scope": "org/monorepo"
+  },
+  {
+    "id": "FIX-50",
+    "scanner": "gitleaks",
+    "category": "duplicate_sighting",
+    "expected_classification": "candidate_secret",
+    "expected_priority": "P2_high",
+    "asset_scope": "org/monorepo"
+  },
+  {
+    "id": "FIX-51",
+    "scanner": "gitleaks",
+    "category": "duplicate_sighting",
+    "expected_classification": "candidate_secret",
+    "expected_priority": "P2_high",
+    "asset_scope": "org/monorepo"
+  },
+  {
+    "id": "FIX-52",
+    "scanner": "gitleaks",
+    "category": "duplicate_sighting",
+    "expected_classification": "candidate_secret",
+    "expected_priority": "P2_high",
+    "asset_scope": "org/monorepo"
+  },
+  {
+    "id": "FIX-55",
+    "scanner": "gitleaks",
+    "category": "cross_repo_collision",
+    "expected_classification": "candidate_secret",
+    "expected_priority": "P2_high",
+    "asset_scope": "tenant-x/cloud-deploy"
+  },
+  {
+    "id": "FIX-56",
+    "scanner": "gitleaks",
+    "category": "cross_repo_collision",
+    "expected_classification": "candidate_secret",
+    "expected_priority": "P2_high",
+    "asset_scope": "tenant-y/staging-env"
+  },
+  {
+    "id": "FIX-60",
+    "scanner": "gitleaks",
+    "category": "ambiguous_context",
+    "expected_classification": "needs_review",
+    "expected_priority": "P3_normal",
+    "asset_scope": "org/data-lake"
+  },
+  {
+    "id": "FIX-61",
+    "scanner": "gitleaks",
+    "category": "ambiguous_context",
+    "expected_classification": "needs_review",
+    "expected_priority": "P3_normal",
+    "asset_scope": "org/ml-pipeline"
+  },
+  {
+    "id": "FIX-62",
+    "scanner": "gitleaks",
+    "category": "ambiguous_context",
+    "expected_classification": "needs_review",
+    "expected_priority": "P3_normal",
+    "asset_scope": "org/frontend"
+  },
+  {
+    "id": "FIX-66",
+    "scanner": "gitleaks",
+    "category": "malformed_edge_case",
+    "expected_classification": "quarantined",
+    "expected_priority": "N/A",
+    "asset_scope": "org/quarantine"
+  },
+  {
+    "id": "FIX-67",
+    "scanner": "gitleaks",
+    "category": "malformed_edge_case",
+    "expected_classification": "quarantined",
+    "expected_priority": "N/A",
+    "asset_scope": "org/quarantine"
+  },
+  {
+    "id": "FIX-68",
+    "scanner": "gitleaks",
+    "category": "malformed_edge_case",
+    "expected_classification": "quarantined",
+    "expected_priority": "N/A",
+    "asset_scope": "org/quarantine"
+  }
+]
