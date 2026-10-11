@@ -35,8 +35,8 @@ Clone the repository and install ETW in editable mode:
 
 ```bash
 # Clone the repository
-git clone <repository-url>
-cd CloudSEK
+git clone https://github.com/hx010207/ETW.git
+cd ETW
 
 # Install dependencies and CLI entrypoint
 pip install -e .

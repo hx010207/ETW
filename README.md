@@ -44,8 +44,8 @@ ETW is built with Python (>= 3.10) and standard libraries with minimal external 
 
 ```bash
 # Clone the repository
-git clone <repository-url>
-cd CloudSEK
+git clone https://github.com/hx010207/ETW.git
+cd ETW
 
 # Install in editable mode
 pip install -e .
